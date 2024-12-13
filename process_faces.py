@@ -5,7 +5,7 @@ import mysql.connector
 import numpy as np
 from dotenv import load_dotenv
 from PIL import Image
-        
+
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
@@ -73,7 +73,7 @@ for pasta in os.listdir(diretorio):
 
     # Verifica se é uma pasta (representando um aluno)
     if os.path.isdir(pasta_path):
-        nome_aluno = pasta  # O nome do aluno é o nome da pasta
+        nome_aluno = pasta
 
         # LOOP PARA PERCORRER TODAS AS IMAGENS DA PASTA DO ALUNO
         for filename in os.listdir(pasta_path):

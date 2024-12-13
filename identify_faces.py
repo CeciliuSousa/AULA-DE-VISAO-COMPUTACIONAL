@@ -33,7 +33,7 @@ def carregar_encodings():
         try:
             # Converte o encoding armazenado em binário para numpy array
             encoding = np.frombuffer(encoding_bin, dtype=np.float64)
-            if encoding.shape == (128,):  # Verifica se o encoding tem 128 dimensões
+            if encoding.shape == (128,):
                 nomes.append(nome)
                 encodings.append(encoding)
             else:
@@ -48,7 +48,7 @@ def formatar_nome(nome):
     partes = nome.split()
     if len(partes) > 1:
         return f"{partes[0]} {partes[1]}"
-    return partes[0]  # Retorna apenas o primeiro nome se não houver segundo
+    return partes[0]
 
 # Função para realizar o reconhecimento facial
 def identificar_rostos():
@@ -90,7 +90,7 @@ def identificar_rostos():
 
             if True in matches:
                 best_match_index = matches.index(True)
-                name = formatar_nome(nomes[best_match_index])  # Aplica a formatação do nome
+                name = formatar_nome(nomes[best_match_index])
 
             # Desenha retângulo ao redor do rosto
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
